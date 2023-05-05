@@ -52,10 +52,10 @@ def load_events(file, max_events = None, use_dask_df=False):
 
 
         ## Converting awkward arrays to panda dataframes
-        df_mu1 = ak.to_pandas(mu_p4[:,0])
+        df_mu1 = ak.to_dataframe(mu_p4[:,0])
         df_mu1 = df_mu1.add_prefix('mu1_')
 
-        df_mu2 = ak.to_pandas(mu_p4[:,1])
+        df_mu2 = ak.to_dataframe(mu_p4[:,1])
         df_mu2 = df_mu2.add_prefix('mu2_')
 
         df = pd.concat([df_mu1, df_mu2], axis=1)
